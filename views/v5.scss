@@ -1,5 +1,11 @@
 @import "reset";
 
+html {
+  background: #f9e8c6 -webkit-gradient(radial, 50% 200, 0, 50% 200, 400, from(#fefcf9), to(#f9e8c6)) no-repeat;
+}
+
 body {
-  background-color: #f0cf9a;
+  width: 550px;
+  margin: 0 auto;
+  min-height: 800px;
 }
