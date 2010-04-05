@@ -73,13 +73,13 @@ h1 {
       display: block;
       background-color: #a7dde8;
       background-repeat: no-repeat, no-repeat;
-      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.3)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#6096a1), color-stop(0.6, #a7dde8));
+      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.5)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#6096a1), color-stop(0.6, #a7dde8));
     }
     &:hover {
       color: #41bbd3;
       border-color: #3ca5ba;
       strong {
-        background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.45)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#6096a1), color-stop(0.6, #a7dde8));
+        background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#6096a1), color-stop(0.6, #a7dde8));
       }
     }
     &:active {
