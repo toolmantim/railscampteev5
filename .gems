@@ -1,0 +1,1 @@
+gem 'haml' --version '3.0.0' --pre
