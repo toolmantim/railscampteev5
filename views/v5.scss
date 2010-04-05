@@ -3,6 +3,7 @@
 @import "font-zingende-regular";
 
 html {
+  background: #f9e8c6;
   background: #f9e8c6 -webkit-gradient(radial, 50% 300, 0, 50% 300, 300, from(#fefcf9), to(#f9e8c6)) no-repeat;
 }
 
@@ -29,6 +30,7 @@ $tangerine: #f16e75;
 @mixin rotated-enamel {
   @include enamel;
   -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
 }
 
 p.introducing {
@@ -60,26 +62,26 @@ h1 {
     font: 40px "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
     padding-top: 1px;
     -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border: 2px solid #3c90a1;
     width: 250px;
     -webkit-box-shadow: rgba(21,67,154,.55) 0 2px 4px;
     background-color: white;
-    text-shadow: 0 1px 5px #fff;
-    color: #2da5bd;
+    text-shadow: 0 1px 1px #fff, 0 1px 5px rgba(255,255,255,.8);
+    color: #3db5cd;
     strong {
       display: block;
-      background: #a7dde8 -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#70a6b1), color-stop(0.6, #a7dde8));
+      background-color: #a7dde8;
+      background-repeat: no-repeat, no-repeat;
+      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from(rgba(255,255,255,.5)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#6096a1), color-stop(0.6, #a7dde8));
     }
     &:hover {
-      color: #3bb5cd;
+      color: #41bbd3;
       border-color: #3ca5ba;
-      -webkit-box-shadow: rgba(21,67,154,.65) 0 2px 4px;
-      strong {
-        background: #a7dde8 -webkit-gradient(linear, left top, left bottom, from(#bbe5ed), to(#84b8c3), color-stop(0.6, #bbe5ed));
-      }
     }
     &:active {
-      top: 251px;
+      top: 252px;
+      -webkit-box-shadow: rgba(21,67,154,.55) 0 1px 3px;
     }
   }
 }

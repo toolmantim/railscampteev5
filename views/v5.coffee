@@ -1,2 +1,3 @@
 $ ->
-  console.log "Fuck yeah!"
+  $("a.order-now").click ->
+    return false

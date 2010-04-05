@@ -1,5 +1,7 @@
 (function(){
   $(function() {
-    return console.log("Fuck yeah!");
+    return $("a.order-now").click(function() {
+      return false;
+    });
   });
 })();
