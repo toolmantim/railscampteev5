@@ -2,11 +2,19 @@
 %html(lang="en-au")
 %head
   %meta(charset="utf-8")
-  %title Railscamp Tee v5
+  %meta(content='Tim Lucas' name='author')
+  %link(rel="author" href="http://toolmantim.com")
   %link(rel="stylesheet" href="/v5.css")
+  %title Railscamp Tee v5
   %script(src="/jquery-1.4.2.min.js")
   %script(src="/v5.js")
 %body
-  %p.introducing Introducing…
-  %h1 Railscamp Tee v5
-  
+  %header
+    %p.introducing Introducing...
+    %h1 Railscamp Tee v5
+  %img.tee(src="/v5.svg")
+  .props
+    %p
+      <em>Tee graphic by</em> <a href="http://waferbaby.com/" class="wafer">waferbaby</a>
+    %p
+      <em>Printing sponsored by</e> <a href="http://plus2.com.au/" class="plus2">plus2</a>

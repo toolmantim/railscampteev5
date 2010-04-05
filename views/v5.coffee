@@ -1,2 +1,2 @@
 $ ->
-  $("<p>Fuck yeah!</p>").appendTo(document.body)
+  console.log "Fuck yeah!"

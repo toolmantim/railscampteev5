@@ -1,11 +1,77 @@
 @import "reset";
+@import "enamel";
 
 html {
-  background: #f9e8c6 -webkit-gradient(radial, 50% 200, 0, 50% 200, 400, from(#fefcf9), to(#f9e8c6)) no-repeat;
+  background: #f9e8c6 -webkit-gradient(radial, 50% 300, 0, 50% 300, 300, from(#fefcf9), to(#f9e8c6)) no-repeat;
 }
 
 body {
   width: 550px;
   margin: 0 auto;
   min-height: 800px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+$light-brown: #e9be80;
+$dark-brown: #ad6b0c;
+$tangerine: #f16e75;
+
+@mixin enamel {
+  font-family: "EnamelBrushRegular-1", "EnamelBrushRegular-2";
+}
+
+@mixin rotated-enamel {
+  @include enamel;
+  -webkit-transform: rotate(-5deg);
+}
+
+header {
+  text-align: left;
+  p.introducing {
+    @include rotated-enamel;
+    font-size: 48px;
+    color: $light-brown;
+  }
+  h1 {
+    @include rotated-enamel;
+    font-size: 100px;
+    color: #ad6b0c;
+  }
+}
+
+img.tee {
+  display: block;
+  margin: 40px auto 40px auto;
+  width: 340px;
+}
+
+.props {
+  p {
+    margin-bottom: 27px;
+  }
+  em {
+    @include enamel;
+    color: $light-brown;
+    font-size: 24px;
+  }
+  a {
+    display: block;
+    color: $dark-brown;
+    &:hover {
+      color: $tangerine;
+    }
+    &.wafer {
+      font-size: 54px;
+      @include enamel;
+    }
+    &.plus2 {
+      /* TODO */
+      font-size: 54px;
+      @include enamel;
+    }
+  }
 }
