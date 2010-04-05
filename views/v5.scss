@@ -1,5 +1,6 @@
 @import "reset";
-@import "enamel";
+@import "font-enamel-brush";
+@import "font-zingende-regular";
 
 html {
   background: #f9e8c6 -webkit-gradient(radial, 50% 300, 0, 50% 300, 300, from(#fefcf9), to(#f9e8c6)) no-repeat;
@@ -22,6 +23,7 @@ $tangerine: #f16e75;
 
 @mixin enamel {
   font-family: "EnamelBrushRegular-1", "EnamelBrushRegular-2";
+  text-shadow: 0 0 3px #fff;
 }
 
 @mixin rotated-enamel {
@@ -29,24 +31,57 @@ $tangerine: #f16e75;
   -webkit-transform: rotate(-5deg);
 }
 
-header {
-  text-align: left;
-  p.introducing {
-    @include rotated-enamel;
-    font-size: 48px;
-    color: $light-brown;
-  }
-  h1 {
-    @include rotated-enamel;
-    font-size: 100px;
-    color: #ad6b0c;
-  }
+p.introducing {
+  @include rotated-enamel;
+  margin-top: 30px;
+  font-size: 48px;
+  color: $light-brown;
+  margin-left: -45%;
+  line-height: 30px;
+}
+h1 {
+  @include rotated-enamel;
+  font-size: 100px;
+  color: #ad6b0c;
+  line-height: 80px;
 }
 
-img.tee {
-  display: block;
-  margin: 40px auto 40px auto;
-  width: 340px;
+.tee {
+  margin: 40px auto 20px auto;
+  position: relative;
+  &, img {
+    width: 340px;
+  }
+  a.order-now {
+    display: inline-block;
+    position: absolute;
+    top: 250px;
+    left: 43px;
+    font: 40px "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
+    padding-top: 1px;
+    -webkit-border-radius: 5px;
+    border: 2px solid #3c90a1;
+    width: 250px;
+    -webkit-box-shadow: rgba(21,67,154,.55) 0 2px 4px;
+    background-color: white;
+    text-shadow: 0 1px 5px #fff;
+    color: #2da5bd;
+    strong {
+      display: block;
+      background: #a7dde8 -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#70a6b1), color-stop(0.6, #a7dde8));
+    }
+    &:hover {
+      color: #3bb5cd;
+      border-color: #3ca5ba;
+      -webkit-box-shadow: rgba(21,67,154,.65) 0 2px 4px;
+      strong {
+        background: #a7dde8 -webkit-gradient(linear, left top, left bottom, from(#bbe5ed), to(#84b8c3), color-stop(0.6, #bbe5ed));
+      }
+    }
+    &:active {
+      top: 251px;
+    }
+  }
 }
 
 .props {
@@ -56,7 +91,8 @@ img.tee {
   em {
     @include enamel;
     color: $light-brown;
-    font-size: 24px;
+    font-size: 30px;
+    text-transform: lowercase;
   }
   a {
     display: block;
