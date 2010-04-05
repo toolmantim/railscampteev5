@@ -58,14 +58,14 @@ h1 {
     display: inline-block;
     position: absolute;
     top: 250px;
-    left: 43px;
+    left: 42px;
     font: 40px "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
     padding-top: 1px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border: 2px solid #3c90a1;
     width: 250px;
-    -webkit-box-shadow: rgba(21,67,154,.55) 0 2px 4px;
+    -webkit-box-shadow: rgba(21,67,124,.55) 0 1px 3px;
     background-color: white;
     text-shadow: 0 1px 1px #fff, 0 1px 5px rgba(255,255,255,.8);
     color: #3db5cd;
@@ -73,15 +73,18 @@ h1 {
       display: block;
       background-color: #a7dde8;
       background-repeat: no-repeat, no-repeat;
-      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 150, from(rgba(255,255,255,.5)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#6096a1), color-stop(0.6, #a7dde8));
+      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.3)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#6096a1), color-stop(0.6, #a7dde8));
     }
     &:hover {
       color: #41bbd3;
       border-color: #3ca5ba;
+      strong {
+        background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.45)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#6096a1), color-stop(0.6, #a7dde8));
+      }
     }
     &:active {
       top: 252px;
-      -webkit-box-shadow: rgba(21,67,154,.55) 0 1px 3px;
+      -webkit-box-shadow: rgba(21,67,124,.55) 0 1px 2px;
     }
   }
 }
