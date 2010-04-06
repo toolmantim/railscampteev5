@@ -20,7 +20,7 @@ a {
 
 $light-brown: #e9be80;
 $dark-brown: #ad6b0c;
-$tangerine: #f16e75;
+$watermelon: #f16e75;
 
 @mixin enamel {
   font-family: "EnamelBrushRegular-1", "EnamelBrushRegular-2";
@@ -29,8 +29,19 @@ $tangerine: #f16e75;
 
 @mixin rotated-enamel {
   @include enamel;
-  -webkit-transform: rotate(-5deg);
-  -moz-transform: rotate(-5deg);
+  @include rotate(-5deg);
+}
+
+@mixin rotate($angle) {
+  -webkit-transform: rotate($angle);
+  -moz-transform: rotate($angle);
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius
+}
+@mixin box-shadow($colour, $xoffset, $yoffset, $radius) {
+  -webkit-box-shadow: $colour $xoffset $yoffset $radius;
 }
 
 p.introducing {
@@ -61,11 +72,10 @@ h1 {
     left: 42px;
     font: 40px "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
     padding-top: 1px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
+    @include border-radius(5px);
     border: 2px solid #3c90a1;
     width: 250px;
-    -webkit-box-shadow: rgba(21,67,124,.55) 0 1px 3px;
+    @include box-shadow(rgba(21,67,124,.55), 0, 1px, 3px);
     background-color: white;
     text-shadow: 0 1px 1px #fff, 0 1px 5px rgba(255,255,255,.8);
     color: #3db5cd;
@@ -84,7 +94,7 @@ h1 {
     }
     &:active {
       top: 252px;
-      -webkit-box-shadow: rgba(21,67,124,.55) 0 1px 2px;
+      @include box-shadow(rgba(21,67,124,.55), 0, 1px, 2px);
     }
   }
 }
@@ -103,7 +113,7 @@ h1 {
     display: block;
     color: $dark-brown;
     &:hover {
-      color: $tangerine;
+      color: $watermelon;
     }
     &.wafer {
       font-size: 54px;
