@@ -19,3 +19,24 @@
       <em>Graphic by</em> <a href="http://waferbaby.com/" class="wafer">waferbaby</a>
     %p
       <em>Printing sponsored by</em> <a href="http://plus2.com.au/" class="plus2">plus2</a>
+
+  #order-form
+    %h2 Tee Reservation Form
+    %form(action="/")
+      .attendee-check
+        %input(type="checkbox" name="attendee" value="1" id="form-railscamp-attendee")
+        %label(for="form-railscamp-attendee") Yes, I’m attending railscamp Canberra 2010 and would like to look smashing in a stylish, hand-delivered Railscamp Tee v5.
+      .deets
+        .name
+          %label(for="form-name") My name is
+          %input(type="textfield" name="name" id="form-name" autocomplete="off")
+        .sex
+          I’m a
+          - for sex in %w( Female Male )
+            %input(type="radio" name="sex" value="#{sex.downcase}" id="form-sex-#{sex.downcase}")
+            %label(for="form-sex-#{sex.downcase}")= sex
+        .tee
+          and my tshirt size is
+          - for size in %w( xs s m l xl 2xl)
+            %input(type="radio" name="size" value="#{size}" id="form-size-#{size}")
+            %label(for="form-size-#{size}")= size.upcase
