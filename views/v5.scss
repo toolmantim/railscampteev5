@@ -160,6 +160,7 @@ $blueBiro: #037ac5;
       text-transform: lowercase;
     }
     a {
+      margin-top: 5px;
       display: block;
       color: $dark-brown;
       &:hover {
@@ -170,9 +171,13 @@ $blueBiro: #037ac5;
         @include enamel;
       }
       &.plus2 {
-        /* TODO */
-        font-size: 44px;
-        @include enamel;
+        text-indent: -10000px;
+        background: url(/plus-2-logo.png) no-repeat 0 0;
+        width: 200px;
+        height: 48px;
+        &:hover, &:active {
+          background-position-y: -48px;
+        }
       }
       &.me {
         font-size: 44px;
@@ -321,18 +326,23 @@ $orderButtonColor: lighten($orderMainColor, 15%);
   &.unflipped {
     -webkit-transform: rotateY(0deg) rotate(-5deg);
   }
+  .pjb {
+    position: absolute;
+    top: -45px;
+    left: 0;
+  }
   .stamps {
     position: absolute;
-    top: 5px;
+    top: 0;
     right: 10px;
     background: transparent url('/envelope-overlay.png') no-repeat;
-    width: 650px;
-    height: 382px;
+    width: 777px;
+    height: 313px;
   }
   p {
     font: 60px/60px "Journal", Helvetica, sans-serif;
     color: $blueBiro;
-    padding: 230px 0 0 40px;
+    padding: 200px 0 0 80px;
     text-align: left;
   }
   &.zoomed-away {
