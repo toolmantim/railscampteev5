@@ -22,6 +22,5 @@ post '/order' do
                               "3" => params[:sex],
                               "5" => params[:size]
                             }
-  STDERR.puts [params, res.body, res.class].inspect
   "All good!"
 end
