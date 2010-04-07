@@ -28,8 +28,9 @@ $ ->
         success: $("#order-form-success")
         success.css({height:$("#order-form").height()}).show()
         setTimeout (-> success.addClass("unflipped")), 50
-    ),
-    false)
+    ), false)
 
   $("#order-form-success").click ->
-    $(this).fadeOut 300, (-> $(this).removeClass("unflipped"))
+    success: $(this)
+    success.addClass("zoomed-away")
+    setTimeout (-> success.hide().removeClass("unflipped").removeClass("zoomed-away")), 1000

@@ -37,9 +37,12 @@
       }
     }), false);
     return $("#order-form-success").click(function() {
-      return $(this).fadeOut(300, (function() {
-        return $(this).removeClass("unflipped");
-      }));
+      var success;
+      success = $(this);
+      success.addClass("zoomed-away");
+      return setTimeout((function() {
+        return success.hide().removeClass("unflipped").removeClass("zoomed-away");
+      }), 1000);
     });
   });
 })();

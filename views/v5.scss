@@ -316,4 +316,10 @@ $orderButtonColor: lighten($orderMainColor, 15%);
   h2 {
     font-size: 70px;
   }
+  &.zoomed-away {
+    top: -700px;
+    -webkit-transition: -webkit-transform 1s, top 1s;
+    -webkit-transition-timing-function: ease-in;
+    -webkit-transform: rotate(15deg);
+  }
 }
