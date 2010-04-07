@@ -228,8 +228,14 @@ $orderButtonColor: lighten($orderMainColor, 15%);
   &, .name label {
     color: $orderLabelColor;
   }
-  label {
+  label, a {
     color: $orderTextColor;
+  }
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: $orderMainColor;
+    }
   }
 
   .attendee-check {
