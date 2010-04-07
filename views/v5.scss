@@ -45,95 +45,113 @@ $watermelon: #f16e75;
   -webkit-box-shadow: $colour $xoffset $yoffset $radius;
   -moz-box-shadow: $colour $xoffset $yoffset $radius;
 }
-
-p.introducing {
-  @include rotated-enamel;
-  margin-top: 30px;
-  font-size: 48px;
-  color: $light-brown;
-  margin-left: -45%;
-  line-height: 30px;
-}
-h1 {
-  @include rotated-enamel;
-  font-size: 100px;
-  color: #ad6b0c;
-  line-height: 80px;
-}
-
-.tee {
-  margin: 40px auto 20px auto;
-  position: relative;
-  &, img {
-    width: 340px;
-  }
-  a.order-now {
-    display: inline-block;
-    position: absolute;
-    top: 250px;
-    left: 42px;
-    font: 40px "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
-    padding-top: 1px;
-    @include border-radius(5px);
-    border: 2px solid #3c90a1;
-    width: 250px;
-    @include box-shadow(rgba(21,67,124,.55), 0, 1px, 3px);
-    background-color: white;
-    text-shadow: 0 1px 1px #fff, 0 1px 5px rgba(255,255,255,.8);
-    color: #3db5cd;
-    strong {
-      display: block;
-      background-color: #a7dde8;
-      background-repeat: no-repeat, no-repeat;
-      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.5)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#6096a1), color-stop(0.6, #a7dde8));
-    }
-    &:hover {
-      color: #41bbd3;
-      border-color: #3ca5ba;
-      strong {
-        background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from(#a7dde8), to(#6096a1), color-stop(0.6, #a7dde8));
-      }
-    }
-    &:active {
-      top: 252px;
-      @include box-shadow(rgba(21,67,124,.55), 0, 1px, 2px);
-    }
-  }
-}
-
-.props {
-  p {
-    margin-bottom: 27px;
-  }
-  em {
-    @include enamel;
-    color: $light-brown;
-    font-size: 30px;
-    text-transform: lowercase;
-  }
-  a {
+@mixin shiny-button($color) {
+  $borderColor: saturate($color, 5%);
+  $backgroundColor: lighten($color, 15%);
+  $backgroundColorDark: darken($backgroundColor, 15%);
+  
+  $hoverColor: lighten($color, 5%);
+  $hoverBorderColor: lighten($borderColor, 5%);
+  $hoverBackgroundColor: lighten($backgroundColor, 5%);
+  $hoverBackgroundColorDark: lighten($backgroundColorDark, 5%);
+  
+  $shadowColor: transparentize(darken($color, 50%), .45);
+  
+  display: inline-block;
+  font-family: "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
+  padding: 1px 0 0 0;
+  @include border-radius(5px);
+  border: 2px solid $borderColor;
+  @include box-shadow($shadowColor, 0, 1px, 3px);
+  background-color: white;
+  text-shadow: 0 1px 1px #fff, 0 1px 5px rgba(255,255,255,.8);
+  color: $color;
+  strong {
     display: block;
-    color: $dark-brown;
-    &:hover {
-      color: $watermelon;
+    background-color: $backgroundColor;
+    background-repeat: no-repeat, no-repeat;
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.5)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from($backgroundColor), to($backgroundColorDark), color-stop(0.6, $backgroundColor));
+  }
+  &:hover {
+    color: $hoverColor;
+    border-color: $hoverBorderColor;
+    strong {
+      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from($hoverBackgroundColor), to($hoverBackgroundColorDark), color-stop(0.6, $hoverBackgroundColor));
     }
-    &.wafer {
-      font-size: 54px;
-      @include enamel;
+  }
+  &:active {
+    top: 252px;
+    @include box-shadow($shadowColor, 0, 1px, 2px);
+  }
+}
+
+#home {
+  p.introducing {
+    @include rotated-enamel;
+    margin-top: 30px;
+    font-size: 48px;
+    color: $light-brown;
+    margin-left: -45%;
+    line-height: 30px;
+  }
+  h1 {
+    @include rotated-enamel;
+    font-size: 100px;
+    color: #ad6b0c;
+    line-height: 80px;
+  }
+
+  .tee {
+    margin: 40px auto 20px auto;
+    position: relative;
+    &, img {
+      width: 340px;
     }
-    &.plus2 {
-      /* TODO */
-      font-size: 54px;
+    a.order-now {
+      position: absolute;
+      top: 250px;
+      left: 42px;
+      @include shiny-button(#3db5cd);
+      font-size: 40px;
+      width: 250px;
+    }
+  }
+
+  .props {
+    p {
+      margin-bottom: 27px;
+    }
+    em {
       @include enamel;
+      color: $light-brown;
+      font-size: 30px;
+      text-transform: lowercase;
+    }
+    a {
+      display: block;
+      color: $dark-brown;
+      &:hover {
+        color: $watermelon;
+      }
+      &.wafer {
+        font-size: 54px;
+        @include enamel;
+      }
+      &.plus2 {
+        /* TODO */
+        font-size: 54px;
+        @include enamel;
+      }
     }
   }
 }
 
 #order-form {
   position: absolute;
-  top: 0;
+  display: none;
+  top: -600px;
   width: 730px;
-  background-color: #fffdf6;
+  background: #fffdf6;
   padding: 55px 25px 25px 25px;
   @include rotate(-5deg);
   @include box-shadow(0px, 10px, 30px, rgba(89,62,8,.4));
@@ -143,9 +161,13 @@ h1 {
   line-height: 1.3em;
   text-align: left;
   
-  .name, .sex {
-    display: inline;
+  -webkit-transition: top 400ms ease-out;
+  
+  &.visible {
+    display: block;
+    top: 0;
   }
+  
   h2 {
     font: 72px/72px "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
     color: #ffdce0;
@@ -175,22 +197,36 @@ h1 {
 
   .deets {
     margin-top: 50px;
-  }
-  
-  .name {
-    label {
+    .name, .sex {
+      display: inline;
+    }
+    label, span {
       margin-right: 15px;
     }
-    input {
-      background: transparent;
-      border: none;
-      border-bottom: 3px dashed #dfddd7;
-      margin-top: -30px;
-      font: 48px "Journal", Helvetica, sans-serif;
-      color: #037ac5;
-      outline: none;
-      width: 300px;
-      margin-right: 30px;
+    .name {
+      input {
+        background: transparent;
+        border: none;
+        border-bottom: 3px dashed #dfddd7;
+        margin-top: -30px;
+        font: 48px "Journal", Helvetica, sans-serif;
+        color: #037ac5;
+        outline: none;
+        width: 300px;
+        margin-right: 30px;
+      }
     }
+    .tee {
+      margin-top: 30px;
+    }
+  }
+
+  button {
+    @include shiny-button(#d8808c);
+    display: block;
+    width: 700px;
+    font-size: 50px;
+    margin-top: 50px;
+    cursor: pointer;
   }
 }

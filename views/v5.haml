@@ -9,16 +9,17 @@
   %script(src="/jquery-1.4.2.min.js")
   %script(src="/v5.js")
 %body
-  %p.introducing Introducing...
-  %h1 Railscamp Tee v5
-  .tee
-    %img(src="/v5.png")
-    %a.order-now(href="") <strong>Reserve one!</strong>
-  .props
-    %p
-      <em>Graphic by</em> <a href="http://waferbaby.com/" class="wafer">waferbaby</a>
-    %p
-      <em>Printing sponsored by</em> <a href="http://plus2.com.au/" class="plus2">plus2</a>
+  #home
+    %p.introducing Introducing...
+    %h1 Railscamp Tee v5
+    .tee
+      %img(src="/v5.png")
+      %a.order-now(href="") <strong>Reserve one!</strong>
+    .props
+      %p
+        <em>Graphic by</em> <a href="http://waferbaby.com/" class="wafer">waferbaby</a>
+      %p
+        <em>Printing sponsored by</em> <a href="http://plus2.com.au/" class="plus2">plus2</a>
 
   #order-form
     %h2 Tee Reservation Form
@@ -31,12 +32,13 @@
           %label(for="form-name") My name is
           %input(type="textfield" name="name" id="form-name" autocomplete="off")
         .sex
-          I’m a
+          %span I’m a
           - for sex in %w( Female Male )
             %input(type="radio" name="sex" value="#{sex.downcase}" id="form-sex-#{sex.downcase}")
             %label(for="form-sex-#{sex.downcase}")= sex
         .tee
-          and my tshirt size is
-          - for size in %w( xs s m l xl 2xl)
+          %span and my tshirt size is
+          - for size in %w( xs s m l xl )
             %input(type="radio" name="size" value="#{size}" id="form-size-#{size}")
             %label(for="form-size-#{size}")= size.upcase
+      %button(type="submit") <strong>Reserve my tee</strong>
