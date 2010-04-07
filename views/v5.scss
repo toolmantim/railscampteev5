@@ -302,7 +302,7 @@ $orderButtonColor: lighten($orderMainColor, 15%);
     background: url('/checkboxes.png?v2') no-repeat 0 0;
     cursor: pointer;
     &:checked {
-      background-position-x: -32px;
+      background-position: -32px 0;
     }
   }
   
