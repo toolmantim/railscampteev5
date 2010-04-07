@@ -17,9 +17,11 @@
       %a.order-now(href="") <strong>Reserve one!</strong>
     .props
       %p
-        <em>Graphic by</em> <a href="http://waferbaby.com/" class="wafer">waferbaby</a>
+        <em>Tee design by</em> <a href="http://waferbaby.com/" class="wafer">waferbaby</a>
       %p
-        <em>Printing sponsored by</em> <a href="http://plus2.com.au/" class="plus2">plus2</a>
+        <em>Sponsored by</em> <a href="http://plus2.com.au/" class="plus2">plus2</a>
+      %p
+        <em>Site by</em> <a href="http://toolmantim.com/" class="me">toolmantim</a>
 
   #order-form
     %h2 Tee Reservation Form
@@ -32,7 +34,7 @@
           %label(for="form-name") My name is
           %input(type="textfield" name="name" id="form-name" autocomplete="off")
         .sex
-          %span I’m a
+          %span I am
           - for sex in %w( Female Male )
             %input(type="radio" name="sex" value="#{sex.downcase}" id="form-sex-#{sex.downcase}")
             %label(for="form-sex-#{sex.downcase}")= sex
@@ -42,3 +44,6 @@
             %input(type="radio" name="size" value="#{size}" id="form-size-#{size}")
             %label(for="form-size-#{size}")= size.upcase
       %button(type="submit") <strong>Reserve my tee</strong>
+      
+  #order-form-success
+    %h2 WOOOTZ!

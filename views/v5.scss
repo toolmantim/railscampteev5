@@ -20,7 +20,7 @@ a {
 
 $light-brown: #e9be80;
 $dark-brown: #ad6b0c;
-$watermelon: #f16e75;
+$babyBlue: #3db5cd;
 
 @mixin enamel {
   font-family: "EnamelBrushRegular-1", "EnamelBrushRegular-2";
@@ -44,62 +44,63 @@ $watermelon: #f16e75;
   -webkit-box-shadow: $colour $xoffset $yoffset $radius;
   -moz-box-shadow: $colour $xoffset $yoffset $radius;
 }
+
 @mixin shiny-button($color) {
-  $borderColor: saturate($color, 5%);
-  $backgroundColor: lighten($color, 15%);
-  $backgroundColorDark: darken($backgroundColor, 15%);
-  $edgeHighlightColor: white;
-  $shadowColor: transparentize(darken($color, 50%), .45);
-  
-  $hoverColor: lighten($color, 5%);
-  $hoverBorderColor: lighten($borderColor, 5%);
-  $hoverBackgroundColor: lighten($backgroundColor, 5%);
-  $hoverBackgroundColorDark: lighten($backgroundColorDark, 5%);
-  
-  $activeColor: desaturate(darken($color, 3%), 5%);
-  $activeBorderColor: $borderColor;
-  $activeBackgroundColor: desaturate(darken($backgroundColor, 5%), 5%);
-  $activeBackgroundDarkColor: darken($activeBackgroundColor, 15%);
-  $activeEdgeHighlightColor: lighten($backgroundColor, 20%);
-  $activeShadowColor: transparentize($shadowColor, .2);
-  
+  $shinyBorderColor: saturate($color, 5%);
+  $shinyBackgroundColor: lighten($color, 15%);
+  $shinyBackgroundColorDark: darken($shinyBackgroundColor, 15%);
+  $shinyEdgeHighlightColor: white;
+  $shinyShadowColor: transparentize(darken($color, 50%), .45);
+
+  $shinyHoverColor: lighten($color, 5%);
+  $shinyHoverBorderColor: lighten($shinyBorderColor, 5%);
+  $shinyHoverBackgroundColor: lighten($shinyBackgroundColor, 5%);
+  $shinyHoverBackgroundColorDark: lighten($shinyBackgroundColorDark, 5%);
+
+  $shinyActiveColor: desaturate(darken($color, 3%), 5%);
+  $shinyActiveBorderColor: $shinyBorderColor;
+  $shinyActiveBackgroundColor: desaturate(darken($shinyBackgroundColor, 5%), 5%);
+  $shinyActiveBackgroundDarkColor: darken($shinyActiveBackgroundColor, 15%);
+  $shinyActiveEdgeHighlightColor: lighten($shinyBackgroundColor, 20%);
+  $shinyActiveShadowColor: transparentize($shinyShadowColor, .2);
+
   display: inline-block;
   font-family: "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
   @include border-radius(5px);
-  border: 2px solid $borderColor;
+  border: 2px solid $shinyBorderColor;
   
   cursor: pointer;
 
   strong {
     display: block;
-    background-color: $backgroundColor;
+    background-color: $shinyBackgroundColor;
     background-repeat: no-repeat, no-repeat;
-    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.5)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from($backgroundColor), to($backgroundColorDark), color-stop(0.6, $backgroundColor));
+    background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.5)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from($shinyBackgroundColor), to($shinyBackgroundColorDark), color-stop(0.6, $shinyBackgroundColor));
   }
   &, &:hover, &[disabled], &[disabled]:hover, &[disabled]:hover:active {
-    @include box-shadow($shadowColor, 0, 1px, 3px);
+    @include box-shadow($shinyShadowColor, 0, 1px, 3px);
     color: $color;
-    background-color: $edgeHighlightColor;
+    background-color: $shinyEdgeHighlightColor;
     text-shadow: 0 1px 1px #fff, 0 1px 5px rgba(255,255,255,.8);
     padding: 1px 0 0 0;
   }
   &:hover, &[disabled], &[disabled]:hover, &[disabled]:hover:active {
-    color: $hoverColor;
-    border-color: $hoverBorderColor;
+    color: $shinyHoverColor;
+    border-color: $shinyHoverBorderColor;
     strong {
-      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from($hoverBackgroundColor), to($hoverBackgroundColorDark), color-stop(0.6, $hoverBackgroundColor));
+      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from($shinyHoverBackgroundColor), to($shinyHoverBackgroundColorDark), color-stop(0.6, $shinyHoverBackgroundColor));
     }
   }
   &:active, &:hover:active {
-    @include box-shadow($activeShadowColor, 0, 1px, 2px);
+    @include box-shadow($shinyActiveShadowColor, 0, 1px, 2px);
     padding-top: 1px;
     padding-bottom: 0px;
-    color: $activeColor;
-    border-color: $activeBorderColor;
+    color: $shinyActiveColor;
+    border-color: $shinyActiveBorderColor;
     text-shadow: 0 1px 1px #fff, 0 1px 5px rgba(255,255,255,.3);
-    background-color: $activeEdgeHighlightColor;
+    background-color: $shinyActiveEdgeHighlightColor;
     strong {
-      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from($activeBackgroundColor), to($activeBackgroundDarkColor), color-stop(0.6, $activeBackgroundColor));
+      background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.6)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from($shinyActiveBackgroundColor), to($shinyActiveBackgroundDarkColor), color-stop(0.6, $shinyActiveBackgroundColor));
     }
   }
 }
@@ -122,7 +123,7 @@ $watermelon: #f16e75;
   }
 
   .tee {
-    margin: 40px auto 20px auto;
+    margin: 40px auto 0 auto;
     position: relative;
     &, img {
       width: 340px;
@@ -131,8 +132,9 @@ $watermelon: #f16e75;
       position: absolute;
       top: 250px;
       left: 42px;
-      @include shiny-button(#3db5cd);
-      font-size: 40px;
+      @include shiny-button($babyBlue);
+      font-size: 44px;
+      line-height: 55px;
       width: 250px;
       &:active {
         top: 252px;
@@ -141,8 +143,14 @@ $watermelon: #f16e75;
   }
 
   .props {
+    overflow: hidden;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 50px;
     p {
-      margin-bottom: 27px;
+      float: left;
+      width: 33%;
+      padding-bottom: 50px;
     }
     em {
       @include enamel;
@@ -154,37 +162,54 @@ $watermelon: #f16e75;
       display: block;
       color: $dark-brown;
       &:hover {
-        color: $watermelon;
+        color: $babyBlue;
       }
       &.wafer {
-        font-size: 54px;
+        font-size: 44px;
         @include enamel;
       }
       &.plus2 {
         /* TODO */
-        font-size: 54px;
+        font-size: 44px;
+        @include enamel;
+      }
+      &.me {
+        font-size: 44px;
         @include enamel;
       }
     }
   }
 }
 
-#order-form {
+#order-form, #order-form-success {
   position: absolute;
   display: none;
-  top: -600px;
+  top: 0;
   width: 720px;
-  background: #fffdf6;
   padding: 55px 50px 25px 50px;
   @include rotate(-5deg);
   @include box-shadow(0px, 10px, 30px, rgba(89,62,8,.4));
-  border: 10px solid #ffeef0;
   @include enamel;
+}
+
+$orderMainColor: $babyBlue;
+$orderTextColor: lighten(desaturate($babyBlue, 55%), 5%);
+$orderLabelColor: lighten($orderMainColor, 15%);
+$orderBorderColor: lighten($orderMainColor, 35%);
+$orderHeadingColor: lighten($orderMainColor, 30%);
+$orderBackgroundColor: lighten($orderBorderColor, 12%);
+$orderButtonColor: lighten($orderMainColor, 15%);
+
+#order-form {
   font-size: 30px;
   line-height: 1.3em;
   text-align: left;
+  top: -600px;
+  background: $orderBackgroundColor;
+  border: 10px solid $orderBorderColor;
   
-  -webkit-transition: top 400ms ease-out;
+  -webkit-transition-property: top, -webkit-transform;
+  -webkit-transition-duration: 300ms, 300ms;
   
   &.visible {
     display: block;
@@ -193,17 +218,17 @@ $watermelon: #f16e75;
   
   h2 {
     font: 72px/72px "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
-    color: #ffdce0;
+    color: $orderHeadingColor;
     margin-bottom: 55px;
     text-align: center;
     background: url(/reservation-ornament-left.png) no-repeat left center, url(/reservation-ornament-right.png) no-repeat right center;
   }
   
   &, .name label {
-    color: #dea1a4;
+    color: $orderLabelColor;
   }
   label {
-    color: #9b8f7b;
+    color: $orderTextColor;
   }
 
   .attendee-check {
@@ -244,7 +269,7 @@ $watermelon: #f16e75;
   }
 
   button {
-    @include shiny-button(#d8808c);
+    @include shiny-button($orderButtonColor);
     display: block;
     width: 710px;
     font-size: 50px;
@@ -260,7 +285,7 @@ $watermelon: #f16e75;
     margin-top: -13px;
     width: 32px;  
     height: 32px;
-    background: url('/checkboxes.png') no-repeat 0 0;
+    background: url('/checkboxes.png?v2') no-repeat 0 0;
     cursor: pointer;
     &:checked {
       background-position-x: -32px;
@@ -272,5 +297,23 @@ $watermelon: #f16e75;
       cursor: default;
       opacity: .7;
     }
+  }
+  
+  &.flipped {
+    -webkit-transform: rotateY(90deg) rotate(-5deg);
+  }
+}
+
+#order-form-success {
+  background-color: $orderBorderColor;
+  color: $orderHeadingColor;
+  -webkit-transform: rotateY(90deg) rotate(-5deg);
+  -webkit-transition: -webkit-transform 300ms;
+  cursor: pointer;
+  &.unflipped {
+    -webkit-transform: rotateY(0deg) rotate(-5deg);
+  }
+  h2 {
+    font-size: 70px;
   }
 }
