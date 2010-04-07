@@ -118,9 +118,11 @@ $blueBiro: #037ac5;
   h1 {
     @include rotated-enamel;
     font-size: 100px;
-    color: #ad6b0c;
     line-height: 80px;
     text-shadow: none;
+    &, a {
+      color: #ad6b0c;
+    }
   }
 
   .tee {
