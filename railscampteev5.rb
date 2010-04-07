@@ -14,13 +14,13 @@ get '/' do
 end
 
 post '/order' do
-  res = Net::HTTP.post_form URI.parse("http://toolmantim.wufoo.com/api/insert/"),
-                            {
-                              "w_api_key" => ENV["WUFOO_API_KEY"],
-                              "w_form" => "railscamp-tee-v5",
-                              "4" => params[:name],
-                              "3" => params[:sex],
-                              "5" => params[:size]
-                            }
+  Net::HTTP.post_form URI.parse("http://toolmantim.wufoo.com/api/insert/"),
+                      {
+                        "w_api_key" => ENV["WUFOO_API_KEY"],
+                        "w_form" => "railscamp-tee-v5",
+                        "4" => params[:name],
+                        "3" => params[:sex],
+                        "5" => params[:size]
+                      }
   "All good!"
 end
