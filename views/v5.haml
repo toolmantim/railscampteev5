@@ -38,7 +38,7 @@
             %label(for="form-sex-#{sex.downcase}")= sex
         .tee
           %span and my tshirt size is
-          - for size in %w( xs s m l xl )
+          - for size in %w( xs s m l xl 2xl )
             %input(type="radio" name="size" value="#{size}" id="form-size-#{size}")
             %label(for="form-size-#{size}")= size.upcase
       %button(type="submit") <strong>Reserve my tee</strong>
