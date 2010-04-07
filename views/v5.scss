@@ -21,6 +21,7 @@ a {
 $light-brown: #e9be80;
 $dark-brown: #ad6b0c;
 $babyBlue: #3db5cd;
+$blueBiro: #037ac5;
 
 @mixin enamel {
   font-family: "EnamelBrushRegular-1", "EnamelBrushRegular-2";
@@ -111,7 +112,7 @@ $babyBlue: #3db5cd;
     margin-top: 30px;
     font-size: 48px;
     color: $light-brown;
-    margin-left: -20%;
+    margin-left: -25%;
     line-height: 30px;
   }
   h1 {
@@ -209,7 +210,7 @@ $orderButtonColor: lighten($orderMainColor, 15%);
   border: 10px solid $orderBorderColor;
   
   -webkit-transition-property: top, -webkit-transform;
-  -webkit-transition-duration: 300ms, 300ms;
+  -webkit-transition-duration: 200ms, 300ms;
   
   &.visible {
     display: block;
@@ -257,7 +258,7 @@ $orderButtonColor: lighten($orderMainColor, 15%);
         border-bottom: 3px dashed #dfddd7;
         margin-top: -30px;
         font: 48px "Journal", Helvetica, sans-serif;
-        color: #037ac5;
+        color: $blueBiro;
         outline: none;
         width: 270px;
         margin-right: 30px;
@@ -305,20 +306,32 @@ $orderButtonColor: lighten($orderMainColor, 15%);
 }
 
 #order-form-success {
-  background-color: $orderBorderColor;
+  background: $orderBorderColor;
   color: $orderHeadingColor;
+  border: 10px solid $orderBorderColor;
   -webkit-transform: rotateY(90deg) rotate(-5deg);
   -webkit-transition: -webkit-transform 300ms;
   cursor: pointer;
   &.unflipped {
     -webkit-transform: rotateY(0deg) rotate(-5deg);
   }
-  h2 {
-    font-size: 70px;
+  .stamps {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: transparent url('/envelope-overlay.png') no-repeat;
+    width: 650px;
+    height: 382px;
+  }
+  p {
+    font: 60px/60px "Journal", Helvetica, sans-serif;
+    color: $blueBiro;
+    padding: 230px 0 0 40px;
+    text-align: left;
   }
   &.zoomed-away {
     top: -700px;
-    -webkit-transition: -webkit-transform 1s, top 1s;
+    -webkit-transition: -webkit-transform 700ms, top 700ms;
     -webkit-transition-timing-function: ease-in;
     -webkit-transform: rotate(15deg);
   }

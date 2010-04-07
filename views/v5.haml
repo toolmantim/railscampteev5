@@ -36,14 +36,27 @@
         .sex
           %span I am
           - for sex in %w( Female Male )
-            %input(type="radio" name="sex" value="#{sex.downcase}" id="form-sex-#{sex.downcase}")
+            %input(type="radio" name="sex" value="#{sex}" id="form-sex-#{sex.downcase}")
             %label(for="form-sex-#{sex.downcase}")= sex
         .tee
           %span and my tshirt size is
           - for size in %w( xs s m l xl 2xl )
-            %input(type="radio" name="size" value="#{size}" id="form-size-#{size}")
+            %input(type="radio" name="size" value="#{size.upcase}" id="form-size-#{size}")
             %label(for="form-size-#{size}")= size.upcase
-      %button(type="submit") <strong>Reserve my tee</strong>
+      %button(type="submit" disabled="disabled") <strong>Reserve my tee</strong>
       
   #order-form-success
-    %h2 WOOOTZ!
+    .stamps
+    %p
+      Railscamp Tee Orders<br>
+      Magical Cloud Printing Corp<br>
+      Internetsville 90210
+      
+  %script
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  %script
+    try {
+    var pageTracker = _gat._getTracker("UA-196014-11");
+    pageTracker._trackPageview();
+    } catch(err) {}
