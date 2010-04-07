@@ -178,7 +178,7 @@ $blueBiro: #037ac5;
         width: 200px;
         height: 48px;
         &:hover, &:active {
-          background-position-y: -48px;
+          background-position: 0 -48px;
         }
       }
       &.me {
