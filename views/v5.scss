@@ -65,20 +65,25 @@ $watermelon: #f16e75;
   
   display: inline-block;
   font-family: "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
-  padding: 1px 0 0 0;
   @include border-radius(5px);
   border: 2px solid $borderColor;
-  @include box-shadow($shadowColor, 0, 1px, 3px);
-  background-color: $edgeHighlightColor;
-  text-shadow: 0 1px 1px #fff, 0 1px 5px rgba(255,255,255,.8);
-  color: $color;
+  
+  cursor: pointer;
+
   strong {
     display: block;
     background-color: $backgroundColor;
     background-repeat: no-repeat, no-repeat;
     background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 200, from(rgba(255,255,255,.5)), to(rgba(255,255,255,0))), -webkit-gradient(linear, left top, left bottom, from($backgroundColor), to($backgroundColorDark), color-stop(0.6, $backgroundColor));
   }
-  &:hover {
+  &, &:hover, &[disabled], &[disabled]:hover, &[disabled]:hover:active {
+    @include box-shadow($shadowColor, 0, 1px, 3px);
+    color: $color;
+    background-color: $edgeHighlightColor;
+    text-shadow: 0 1px 1px #fff, 0 1px 5px rgba(255,255,255,.8);
+    padding: 1px 0 0 0;
+  }
+  &:hover, &[disabled], &[disabled]:hover, &[disabled]:hover:active {
     color: $hoverColor;
     border-color: $hoverBorderColor;
     strong {
@@ -244,7 +249,6 @@ $watermelon: #f16e75;
     width: 710px;
     font-size: 50px;
     margin-top: 50px;
-    cursor: pointer;
   }
   
   *:focus {
@@ -260,6 +264,13 @@ $watermelon: #f16e75;
     cursor: pointer;
     &:checked {
       background-position-x: -32px;
+    }
+  }
+  
+  *[disabled] {
+    &, &:hover, &:active:hover {
+      cursor: default;
+      opacity: .7;
     }
   }
 }

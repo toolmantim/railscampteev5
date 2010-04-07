@@ -10,6 +10,8 @@
       return false;
     });
     return $("#order-form").submit(function() {
+      $(this).find(":input").attr("disabled", "disabled");
+      $(this).find("button strong").text("Reserving...");
       return false;
     });
   });

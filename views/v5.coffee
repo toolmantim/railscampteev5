@@ -7,4 +7,7 @@ $ ->
     return false
 
   $("#order-form").submit ->
+    $(this).find(":input").attr("disabled", "disabled")
+    $(this).find("button strong").text("Reserving...")
+  
     return false
