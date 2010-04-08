@@ -36,10 +36,11 @@ $blueBiro: #037ac5;
 @mixin rotate($angle) {
   -webkit-transform: rotate($angle);
   -moz-transform: rotate($angle);
+  -o-transform: rotate($angle);
 }
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
-  -moz-border-radius: $radius
+  -moz-border-radius: $radius;
 }
 @mixin box-shadow($colour, $xoffset, $yoffset, $radius) {
   -webkit-box-shadow: $colour $xoffset $yoffset $radius;
