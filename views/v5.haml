@@ -1,63 +1,67 @@
 !!! 5
 %html(lang="en-au")
-%head
-  %meta(charset="utf-8")
-  %meta(content='Tim Lucas' name='author')
-  %link(rel="author" href="http://toolmantim.com")
-  %link(rel="stylesheet" href="/v5.css")
-  %title Railscamp Tee v5
-  %script(src="/jquery-1.4.2.min.js")
-  %script(src="/v5.js")
-%body
-  #home
-    %p.introducing Introducing...
-    %h1 <a href="http://railscamps.com/">Railscamp</a> Tee v5
-    .tee
-      %img(src="/v5.png")
-      %a.order-now(href="") <strong>Reserve one!</strong>
-    .props
-      %p
-        <em>Tee design by</em> <a href="http://waferbaby.com/" class="wafer">waferbaby</a>
-      %p
-        <em>Sponsored by</em> <a href="http://plus2.com.au/" class="plus2">plus2</a>
-      %p
-        <em>Site by</em> <a href="http://toolmantim.com/" class="me">toolmantim</a>
+  %head
+    /
+      Well my view-source'ing friend, you're in luck! This code is open-source,
+      and MIT licensed. Go here to check out da code:
+      http://github.com/toolmantim/railscampteev5
+    %meta(charset="utf-8")
+    %meta(content='Tim Lucas' name='author')
+    %link(rel="author" href="http://toolmantim.com")
+    %link(rel="stylesheet" href="/v5.css")
+    %title Railscamp Tee v5
+    %script(src="/jquery-1.4.2.min.js")
+    %script(src="/v5.js")
+  %body
+    #home
+      %p.introducing Introducing...
+      %h1 <a href="http://railscamps.com/">Railscamp</a> Tee v5
+      .tee
+        %img(src="/v5.png")
+        %a.order-now(href="") <strong>Reserve one!</strong>
+      .props
+        %p
+          <em>Tee design by</em> <a href="http://waferbaby.com/" class="wafer">waferbaby</a>
+        %p
+          <em>Sponsored by</em> <a href="http://plus2.com.au/" class="plus2">plus2</a>
+        %p
+          <em>Site by</em> <a href="http://toolmantim.com/" class="me">toolmantim</a>
 
-  #order-form
-    %h2 Tee Reservation Form
-    %form(action="/")
-      .attendee-check
-        %input(type="checkbox" name="attendee" value="1" id="form-railscamp-attendee")
-        %label(for="form-railscamp-attendee") Yes, I’m attending <a href="http://railscamps.com/#au_act_april_2010">Railscamp Canberra 2010</a> and would like to look smashing in a stylish, hand-delivered Railscamp Tee v5.
-      .deets
-        .name
-          %label(for="form-name") My name is
-          %input(type="textfield" name="name" id="form-name" autocomplete="off")
-        .sex
-          %span I am
-          - for sex in %w( Female Male )
-            %input(type="radio" name="sex" value="#{sex}" id="form-sex-#{sex.downcase}")
-            %label(for="form-sex-#{sex.downcase}")= sex
-        .tee
-          %span and my tshirt size is
-          - for size in %w( xs s m l xl 2xl )
-            %input(type="radio" name="size" value="#{size.upcase}" id="form-size-#{size}")
-            %label(for="form-size-#{size}")= size.upcase
-      %button(type="submit" disabled="disabled") <strong>Reserve my tee</strong>
+    #order-form
+      %h2 Tee Reservation Form
+      %form(action="/")
+        .attendee-check
+          %input(type="checkbox" name="attendee" value="1" id="form-railscamp-attendee")
+          %label(for="form-railscamp-attendee") Yes, I’m attending <a href="http://railscamps.com/#au_act_april_2010">Railscamp Canberra 2010</a> and would like to look smashing in a stylish, hand-delivered Railscamp Tee v5.
+        .deets
+          .name
+            %label(for="form-name") My name is
+            %input(type="textfield" name="name" id="form-name" autocomplete="off")
+          .sex
+            %span I am
+            - for sex in %w( Female Male )
+              %input(type="radio" name="sex" value="#{sex}" id="form-sex-#{sex.downcase}")
+              %label(for="form-sex-#{sex.downcase}")= sex
+          .tee
+            %span and my tshirt size is
+            - for size in %w( xs s m l xl 2xl )
+              %input(type="radio" name="size" value="#{size.upcase}" id="form-size-#{size}")
+              %label(for="form-size-#{size}")= size.upcase
+        %button(type="submit" disabled="disabled") <strong>Reserve my tee</strong>
       
-  #order-form-success
-    %img.pjb(src="/pjb-banana.gif" alt="It's Peanut Butter Jelly Time!")
-    .stamps
-    %p
-      Railscamp Tee Orders<br>
-      Magical Cloud Printing Corp<br>
-      Internetsville 90210
+    #order-form-success
+      %img.pjb(src="/pjb-banana.gif" alt="It's Peanut Butter Jelly Time!")
+      .stamps
+      %p
+        Railscamp Tee Orders<br>
+        Magical Cloud Printing Corp<br>
+        Internetsville 90210
       
-  %script
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-  %script
-    try {
-    var pageTracker = _gat._getTracker("UA-196014-11");
-    pageTracker._trackPageview();
-    } catch(err) {}
+    %script
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    %script
+      try {
+      var pageTracker = _gat._getTracker("UA-196014-11");
+      pageTracker._trackPageview();
+      } catch(err) {}
