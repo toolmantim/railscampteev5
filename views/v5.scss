@@ -130,12 +130,15 @@ $blueBiro: #037ac5;
     margin: 40px auto 0 auto;
     position: relative;
     &, img {
-      width: 340px;
+      width: 349px;
+    }
+    img {
+      height: 373px;
     }
     a.order-now {
       position: absolute;
       top: 250px;
-      left: 42px;
+      left: 47px;
       @include shiny-button($babyBlue);
       font-size: 44px;
       line-height: 55px;
