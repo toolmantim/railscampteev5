@@ -1,5 +1,15 @@
 (function(){
   $(function() {
+    var _a, _b, _c, _d, img;
+    // Preload dem images
+    _a = []; _c = ["checkboxes.png", "reservation-ornament-left.png", "reservation-ornament-right.png", "envelope-overlay.png"];
+    for (_b = 0, _d = _c.length; _b < _d; _b++) {
+      img = _c[_b];
+      _a.push($("<img/>").attr("src", img));
+    }
+    return _a;
+  });
+  $(function() {
     var cssTransitionsSupported, flip, form, formInputFields, showEnvelope, submitButton, submitButtonInner, success;
     // A -webkit-transition only version of:
     // http://technology.razorfish.com/2010/02/08/detecting-css-transitions-support-using-javascript/

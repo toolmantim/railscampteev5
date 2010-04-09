@@ -1,4 +1,8 @@
 $ ->
+  # Preload dem images
+  $("<img/>").attr("src", img) for img in ["checkboxes.png", "reservation-ornament-left.png", "reservation-ornament-right.png", "envelope-overlay.png"]
+
+$ ->
   # A -webkit-transition only version of:
   # http://technology.razorfish.com/2010/02/08/detecting-css-transitions-support-using-javascript/
   cssTransitionsSupported: false
