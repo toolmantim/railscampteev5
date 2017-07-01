@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang='en-au'>
+<head>
+<!--
+Well my view-source'ing friend, you're in luck! This code is open-source,
+and MIT licensed. Go here to check out da code:
+http://github.com/toolmantim/railscampteev5
+-->
+<meta charset='utf-8'>
+<meta content='Tim Lucas' name='author'>
+<link href='http://toolmantim.com' rel='author'>
+<link href='v5.css' rel='stylesheet'>
+<title>Railscamp Tee v5</title>
+<script src='jquery-1.4.2.min.js'></script>
+<script src='v5.js'></script>
+</head>
+<body>
+<div id='home'>
+<p class='introducing'>Introducing...</p>
+<h1><a href="http://railscamps.com/">Railscamp</a> Tee v5</h1>
+<div class='tee'>
+<img alt='V5 version of the Railscamp tee' src='v5.png'>
+<a class='order-now' href=''><strong>Reserve one!</strong></a>
+</div>
+<div class='props'>
+<p>
+<em>Tee design by</em> <a href="http://waferbaby.com/" class="wafer">waferbaby</a>
+</p>
+<p>
+<em>Sponsored by</em> <a href="http://plus2.com.au/" class="plus2">plus2</a>
+</p>
+<p>
+<em>Site by</em> <a href="http://toolmantim.com/" class="me">toolmantim</a>
+</p>
+</div>
+</div>
+<div id='order-form'>
+<h2>Tee Reservation Form</h2>
+<form action='/'>
+<div class='attendee-check'>
+<input id='form-railscamp-attendee' name='attendee' type='checkbox' value='1'>
+<label for='form-railscamp-attendee'>Yes, I’m attending <a href="http://railscamps.com/#au_act_april_2010">Railscamp Canberra 2010</a> and would like to look smashing in a stylish, hand-delivered Railscamp Tee v5.</label>
+</div>
+<div class='deets'>
+<div class='name'>
+<label for='form-name'>My name is</label>
+<input autocomplete='off' id='form-name' name='name' type='textfield'>
+</div>
+<div class='sex'>
+<span>I am</span>
+<input id='form-sex-female' name='sex' type='radio' value='Female'>
+<label for='form-sex-female'>Female</label>
+<input id='form-sex-male' name='sex' type='radio' value='Male'>
+<label for='form-sex-male'>Male</label>
+</div>
+<div class='tee'>
+<span>and my tshirt size is</span>
+<input id='form-size-xs' name='size' type='radio' value='XS'>
+<label for='form-size-xs'>XS</label>
+<input id='form-size-s' name='size' type='radio' value='S'>
+<label for='form-size-s'>S</label>
+<input id='form-size-m' name='size' type='radio' value='M'>
+<label for='form-size-m'>M</label>
+<input id='form-size-l' name='size' type='radio' value='L'>
+<label for='form-size-l'>L</label>
+<input id='form-size-xl' name='size' type='radio' value='XL'>
+<label for='form-size-xl'>XL</label>
+<input id='form-size-2xl' name='size' type='radio' value='2XL'>
+<label for='form-size-2xl'>2XL</label>
+</div>
+</div>
+<button disabled='disabled' type='submit'><strong>Reserve my tee</strong></button>
+</form>
+</div>
+<div id='order-form-success'>
+<img alt='It&#39;s Peanut Butter Jelly Time!' class='pjb' src='pjb-banana.gif'>
+<div class='stamps'></div>
+<p>
+Railscamp Tee Orders<br>
+Magical Cloud Printing Corp<br>
+Internetsville 90210
+</p>
+</div>
+</body>
+</html>
