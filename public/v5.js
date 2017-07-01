@@ -10,17 +10,7 @@
     return _a;
   });
   $(function() {
-    var cssTransitionsSupported, flip, form, formInputFields, showEnvelope, submitButton, submitButtonInner, success;
-    // A -webkit-transition only version of:
-    // http://technology.razorfish.com/2010/02/08/detecting-css-transitions-support-using-javascript/
-    cssTransitionsSupported = false;
-    (function() {
-      var div;
-      div = document.createElement('div');
-      div.innerHTML = '<div style="-webkit-transition:color 1s linear;"></div>';
-      cssTransitionsSupported = div.firstChild.style.webkitTransition;
-      return delete div;
-    })();
+    var flip, form, formInputFields, showEnvelope, submitButton, submitButtonInner, success;
     form = $("#order-form");
     submitButton = form.find("button");
     submitButtonInner = submitButton.find("strong");
@@ -74,12 +64,9 @@
     });
     flip = function flip() {
       form.addClass("flipped");
-      if (!(cssTransitionsSupported)) {
-        return showEnvelope();
-      }
     };
-    form.get(0).addEventListener("webkitTransitionEnd", (function(event) {
-      if (event.propertyName === "-webkit-transform") {
+    form.get(0).addEventListener("transitionend", (function(event) {
+      if (event.propertyName === "transform") {
         return showEnvelope();
       }
     }), false);

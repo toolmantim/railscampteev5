@@ -8,16 +8,16 @@
     %meta(charset="utf-8")
     %meta(content='Tim Lucas' name='author')
     %link(rel="author" href="http://toolmantim.com")
-    %link(rel="stylesheet" href="/v5.css")
+    %link(rel="stylesheet" href="v5.css")
     %title Railscamp Tee v5
-    %script(src="/jquery-1.4.2.min.js")
-    %script(src="/v5.js")
+    %script(src="jquery-1.4.2.min.js")
+    %script(src="v5.js")
   %body
     #home
       %p.introducing Introducing...
       %h1 <a href="http://railscamps.com/">Railscamp</a> Tee v5
       .tee
-        %img(src="/v5.png" alt="V5 version of the Railscamp tee")
+        %img(src="v5.png" alt="V5 version of the Railscamp tee")
         %a.order-now(href="") <strong>Reserve one!</strong>
       .props
         %p
@@ -48,20 +48,11 @@
               %input(type="radio" name="size" value="#{size.upcase}" id="form-size-#{size}")
               %label(for="form-size-#{size}")= size.upcase
         %button(type="submit" disabled="disabled") <strong>Reserve my tee</strong>
-      
+
     #order-form-success
-      %img.pjb(src="/pjb-banana.gif" alt="It's Peanut Butter Jelly Time!")
+      %img.pjb(src="pjb-banana.gif" alt="It's Peanut Butter Jelly Time!")
       .stamps
       %p
         Railscamp Tee Orders<br>
         Magical Cloud Printing Corp<br>
         Internetsville 90210
-      
-    %script
-      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    %script
-      try {
-      var pageTracker = _gat._getTracker("UA-196014-11");
-      pageTracker._trackPageview();
-      } catch(err) {}

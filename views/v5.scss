@@ -34,17 +34,13 @@ $blueBiro: #037ac5;
 }
 
 @mixin rotate($angle) {
-  -webkit-transform: rotate($angle);
-  -moz-transform: rotate($angle);
-  -o-transform: rotate($angle);
+  transform: rotate($angle);
 }
 @mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
+  border-radius: $radius;
 }
 @mixin box-shadow($colour, $xoffset, $yoffset, $radius) {
-  -webkit-box-shadow: $colour $xoffset $yoffset $radius;
-  -moz-box-shadow: $colour $xoffset $yoffset $radius;
+  box-shadow: $colour $xoffset $yoffset $radius;
 }
 
 @mixin shiny-button($color) {
@@ -70,7 +66,7 @@ $blueBiro: #037ac5;
   font-family: "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
   @include border-radius(5px);
   border: 2px solid $shinyBorderColor;
-  
+
   cursor: pointer;
 
   strong {
@@ -178,7 +174,7 @@ $blueBiro: #037ac5;
       }
       &.plus2 {
         text-indent: -10000px;
-        background: url(/plus-2-logo.png) no-repeat 0 0;
+        background: url(plus-2-logo.png) no-repeat 0 0;
         width: 200px;
         height: 48px;
         &:hover, &:active {
@@ -219,23 +215,23 @@ $orderButtonColor: lighten($orderMainColor, 15%);
   top: -600px;
   background: $orderBackgroundColor;
   border: 10px solid $orderBorderColor;
-  
-  -webkit-transition-property: top, -webkit-transform;
-  -webkit-transition-duration: 200ms, 300ms;
-  
+
+  transition-property: top, transform;
+  transition-duration: 200ms, 300ms;
+
   &.visible {
     display: block;
     top: 0;
   }
-  
+
   h2 {
     font: 72px/72px "ZingendeRegular-1", "ZingendeRegular-2", Helvetica, sans-serif;
     color: $orderHeadingColor;
     margin-bottom: 55px;
     text-align: center;
-    background: url(/reservation-ornament-left.png) no-repeat left center, url(/reservation-ornament-right.png) no-repeat right center;
+    background: url(reservation-ornament-left.png) no-repeat left center, url(reservation-ornament-right.png) no-repeat right center;
   }
-  
+
   &, .name label {
     color: $orderLabelColor;
   }
@@ -293,32 +289,32 @@ $orderButtonColor: lighten($orderMainColor, 15%);
     font-size: 50px;
     margin-top: 50px;
   }
-  
+
   *:focus {
     outline-color: #ddd;
   }
-  
+
   input[type="radio"], input[type="checkbox"] {
     -khtml-appearance: none;
     margin-top: -13px;
-    width: 32px;  
+    width: 32px;
     height: 32px;
-    background: url('/checkboxes.png?v2') no-repeat 0 0;
+    background: url('checkboxes.png?v2') no-repeat 0 0;
     cursor: pointer;
     &:checked {
       background-position: -32px 0;
     }
   }
-  
+
   *[disabled] {
     &, &:hover, &:active:hover {
       cursor: default;
       opacity: .7;
     }
   }
-  
+
   &.flipped {
-    -webkit-transform: rotateY(90deg) rotate(-5deg);
+    transform: rotateY(90deg) rotate(-5deg);
   }
 }
 
@@ -326,11 +322,11 @@ $orderButtonColor: lighten($orderMainColor, 15%);
   background: $orderBorderColor;
   color: $orderHeadingColor;
   border: 10px solid $orderBorderColor;
-  -webkit-transform: rotateY(90deg) rotate(-5deg);
-  -webkit-transition: -webkit-transform 300ms;
+  transform: rotateY(90deg) rotate(-5deg);
+  transition: transform 300ms;
   cursor: pointer;
   &.unflipped {
-    -webkit-transform: rotateY(0deg) rotate(-5deg);
+    transform: rotateY(0deg) rotate(-5deg);
   }
   .pjb {
     position: absolute;
@@ -341,7 +337,7 @@ $orderButtonColor: lighten($orderMainColor, 15%);
     position: absolute;
     top: 0;
     right: 10px;
-    background: transparent url('/envelope-overlay.png') no-repeat;
+    background: transparent url('envelope-overlay.png') no-repeat;
     width: 777px;
     height: 313px;
   }
@@ -353,8 +349,8 @@ $orderButtonColor: lighten($orderMainColor, 15%);
   }
   &.zoomed-away {
     top: -700px;
-    -webkit-transition: -webkit-transform 700ms, top 700ms;
-    -webkit-transition-timing-function: ease-in;
-    -webkit-transform: rotate(15deg);
+    transition: transform 700ms, top 700ms;
+    transition-timing-function: ease-in;
+    transform: rotate(15deg);
   }
 }

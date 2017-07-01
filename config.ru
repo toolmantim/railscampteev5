@@ -1,3 +1,3 @@
-require 'railscampteev5'
+require_relative './railscampteev5'
 
 run Sinatra::Application
